@@ -1,0 +1,614 @@
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+p,
+a,
+img,
+i,
+ul,
+li,
+form,
+label,
+footer,
+header,
+nav {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+footer,
+header,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+	font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+}
+
+ul,
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+p,
+a,
+li {
+	font-size: 18px;
+}
+
+section {
+	margin-bottom: 60px;
+}
+
+/* ヘッダー */
+header {
+	background-color: rgba(53, 66, 64, 0.63);
+	width: 100%;
+	position: fixed;
+	z-index: 100;
+	height: 50px;
+}
+
+.header-wrap {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	line-height: 50px;
+	position: relative;
+}
+
+.header-icon a {
+	color: #fff !important;
+	font-size: 1.6rem;
+	letter-spacing: 0.2rem;
+	font-family: cursive;
+	font-weight: bold;
+	text-decoration: none !important;
+	margin-left: 30px;
+}
+
+.header-content {
+	width: 70%;
+}
+
+.header-content ul {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0;
+}
+
+.header-content li {
+	margin-right: 30px;
+}
+
+.header-content li a {
+	color: #fff;
+	text-decoration: none;
+}
+
+/* <!-- ハンバーガーメニュー --> */
+/*----------------------------
+* メニュー開閉ボタン
+*----------------------------*/
+
+.menu-btn{
+	position: fixed;
+	top: 13px;
+	right: 5px;
+	z-index: 2;
+	width: 60px;
+	height: 24px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	display: none;
+  }
+
+  .menu-btn i {
+    display: block;
+    width: 1.75rem;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+	transition: transform .5s, opacity .5s;
+  }
+	.menu-btn i:nth-child(1) {
+		top: 0;
+	}
+	.menu-btn i:nth-child(2) {
+		top: 0;
+		bottom: 0;
+		margin: auto;
+	}
+	.menu-btn i:nth-child(3) {
+		bottom: 0;
+	}
+
+	.menu-btn.is-active i:nth-child(1) {
+		transform: translateY(10px) rotate(-45deg);
+	}
+	.menu-btn.is-active i:nth-child(2) {
+		opacity: 0;
+	}
+	.menu-btn.is-active i:nth-child(3) {
+		transform: translateY(-12px) rotate(45deg);
+	}
+  
+  /*----------------------------
+  * メニュー本体
+  *----------------------------*/
+  .menu{
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 1;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: rgba(5,5,5,0.7);
+
+  }
+  .menu__item{
+	width: 100%;
+	height: auto;
+	padding: .5em 1em;
+	text-align: center;
+	color: #fff;
+	box-sizing: border-box;
+	text-decoration: none;
+  }
+
+  .menu__item a{
+	  text-decoration: none!important;
+	  color: #fff;
+	  font-size: 1.4rem;
+  }
+  
+  /*----------------------------
+  * アニメーション部分
+  *----------------------------*/
+/* アニメーション前のメニューの状態 */
+.menu{
+	transform: translateX(100vw);
+	transition: all .3s linear;
+  }
+  /* アニメーション後のメニューの状態 */
+  .menu.is-active{
+	transform: translateX(0);
+  }
+
+/* キービジュアル */
+#top {
+	background-image: url(../images/S__22224933.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 80vh;
+	min-height: 600px;
+	position: relative;
+}
+
+.top-cover {
+	background-color: rgba(0, 0, 0, 0.6);
+	height: 100%;
+}
+
+#top .container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	color: #fff;
+}
+
+#top .container h1 {
+	font-size: 3rem;
+}
+
+#top .container a {
+	color: #fff;
+	line-height: 100px;
+	border: solid 2px #fff;
+	padding: 15px 30px;
+	border-radius: 30px;
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.8s;
+}
+
+#top .container a:hover{
+	background-color: #fff;
+	color: #000;
+}
+
+/* 自己紹介 */
+.title {
+	text-align: center;
+	margin-bottom: 50px;
+
+}
+
+.my-introduction p {
+	font-size: 0.9rem;
+}
+
+.my-photo img {
+	width: 100%;
+}
+
+#about h2 {
+	margin-bottom: 30px;
+}
+
+/* フェードインアニメーション  */
+.fadein {
+	opacity : 0;
+	/* transform : translate(0, 100px); */
+	transition : 1s;
+  }
+   
+  .active{
+	opacity : 1;
+	/* transform : translate(0, 0); */
+  }
+
+/* スキル/ */
+
+#skill {
+	background-color: #efefef;
+}
+
+.skill-title {
+	text-align: center;
+	margin-bottom: 20px;
+	padding-top: 30px;
+}
+
+#skill p {
+	text-align: center;
+	color: #777;
+	font-size: 0.9rem;
+}
+
+.skills li {
+	text-align: center;
+	margin-bottom: 40px;
+	font-size: 1.2rem;
+}
+
+.skills li img {
+	width: 200px;
+	height: auto;
+	margin-bottom: 10px;
+}
+
+.skills li p {
+	font-size: 1.2rem;
+	color: #333;
+}
+
+/* サービス */
+.service-message h1 {
+	margin-bottom: 20px;
+}
+
+.service-message p {
+	text-align: center;
+	font-size: 0.9rem;
+	color: #777;
+	margin-bottom: 30px;
+}
+.service-list p {
+	text-align: center;
+	margin-bottom: 10px;
+	font-size: 0.9rem;
+}
+
+.service-content{
+	background-image: url(../images/wood3.jpeg);
+	position: relative;
+	z-index: 0;
+	box-shadow: 3px 3px 10px;
+
+}
+
+.service-content::after{
+	content: "";
+	background-color: rgba(255,255,255,0.3);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.service-list h2 {
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 1.1rem;
+}
+
+.service-list .text{
+	font-size: 0.8rem;
+}
+
+.service-icon {
+	font-size: 34px;
+	font-weight: lighter;
+	color: black;
+}
+
+/* プロダクト */
+#products {
+	background-color: #efefef;
+}
+
+.products-title {
+	text-align: center;
+	margin-bottom: 20px;
+	padding-top: 30px;
+}
+
+#products .massage {
+	text-align: center;
+	margin-bottom: 30px;
+	color: #777;
+	font-size: 0.9rem;
+}
+
+.category {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.category li {
+	margin-bottom: 30px;
+}
+
+.category li a {
+	text-decoration: none;
+	color: #000;
+	padding: 8px 18px;
+	border-radius: 30px;
+	transition: all 0.3s;
+}
+
+.category li a.active,
+.category li a:hover {
+	background-color: skyblue;
+	color: #fff;
+}
+
+#products .images li {
+	padding: 0;
+	margin-bottom: 60px;
+	overflow: hidden;
+	position: relative;
+}
+
+#products .images li img {
+	width: 100%;
+	transition-duration: 0.5s;
+	height: 100%;
+	border-radius: 10px;
+
+}
+
+#products .images li:hover {
+	transform: scale(1.1);
+	transition-duration: 0.5s;
+}
+
+.product1,
+.product2,
+.product3,
+.product4 {
+	display: none;
+	background-color: rgba(0, 0, 0, 0.6);
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: all 0.27s cubic-bezier(0.3, 0.1, 0.58, 1);
+	color: #fff;
+	border-radius: 10px;
+
+}
+
+#products li div p {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 1.4rem;
+}
+
+/* コンタクトフォーム */
+.contact-title {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.contact-message {
+	text-align: center;
+	margin-bottom: 20px;
+	color: #777;
+
+}
+
+.contact-message p {
+	font-size: 0.9rem;
+	margin-bottom: 0;
+}
+
+#contact li {
+	text-align: center;
+}
+
+#contact li i {
+	margin-bottom: 15px;
+}
+
+#contact h2 {
+	font-size: 1.2rem;
+	color: #777;
+}
+
+#contact li p {
+	font-size: 0.9rem;
+	color: #777;
+}
+
+#contact .email h2,
+#contact .email p {
+	color: #000;
+}
+
+.input {
+	margin-bottom: 30px;
+	border: 1px solid #999;
+}
+
+.submit {
+	display: block;
+	background-color: skyblue;
+	border: none;
+	color: #fff;
+	font-size: 1.4rem;
+	box-shadow: 1px 1px 5px gray;
+	margin: 0 auto;
+	padding: 7px 20px;
+}
+
+/* フッター */
+footer {
+	background-color: rgb(228, 226, 226);
+	position: relative;
+	height: 150px;
+}
+
+footer .twitter {
+	text-align: center;
+	margin-bottom: 20px;
+	padding-top: 30px;
+}
+
+footer p {
+	text-align: center;
+	font-size: 0.8rem;
+}
+
+.twitter-icon {
+	color: #999;
+}
+
+#page_top {
+	background-color: skyblue;
+	opacity: 0.8;
+	border-radius: 20%;
+	text-align: center;
+	align-items: center;
+	display: block;
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+	width: 35px;
+	height: 35px;
+	text-decoration: none;
+	transition: all 0.3s;
+}
+
+#page_top i {
+	color: #fff;
+	display: block;
+	line-height: 35px;
+}
+
+@media screen and (max-width:768px) {
+	body {
+		max-width: 768px;
+	}
+
+	/* ヘッダー */
+	.header-content {
+		display: none;
+	}
+
+	/* ハンバーガーメニュー */
+	.menu-btn{
+		display: block;
+	}
+
+	/* 自己紹介 */
+	.my-photo {
+		margin-bottom: 30px;
+	}
+
+
+	/* スキル */
+	.service1,.service2{
+		margin-bottom: 50px;
+	}
+
+
+	.service-content{
+		padding: 50px;
+	}
+
+	/* プロダクト */
+	#products .images li {
+		display: block;
+		margin-bottom: 150px;
+	}
+}
